@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule of Events - Hannah Lang & Andy Dunn</title>
+  <style>
+    /* Custom Retro Cursor Setup with Standard Fallback */
+    html, body, a, button {
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0v16.043l4.113-3.882 3.195 7.126 3.167-1.42-3.14-7.013h5.452z" fill="white" stroke="black" stroke-width="2"/></svg>'), auto; 
+    }
+    
+    body {
+      /* Tiled Cloud Background Integration */
+      background-image: url('imagine_cloud_blue.jpg');
+      background-repeat: repeat;
+      background-color: #a3c2e0; 
+      font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
+      font-size: 13px;
+      color: #0F172A; /* Palette 1: Deep Navy Text */
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Full-width Blinking Text Banner Alert */
+    .blink-container {
+      background-color: #0F172A; /* Palette 1: Deep Navy */ 
+      color: #F8FAFC; /* Palette 1: Ghost White Text */ 
+      font-family: "Comic Sans MS", "Comic Sans", sans-serif; 
+      font-size: 16px; 
+      font-weight: bold; 
+      letter-spacing: 2px; 
+      padding: 8px 0; 
+      text-align: center; 
+      border-bottom: 3px double #F8FAFC; 
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+    }
+
+    /* Pure CSS Safe Blinking Animation */
+    .blink-text {
+      animation: retro-blink 2.5s ease-in-out infinite;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .blink-text {
+        animation: none; 
+      }
+      .title-image {
+        animation: none !important; 
+      }
+    }
+
+    @keyframes retro-blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    
+    /* Outer Framework Container - Palette 1: Ghost White */
+    .main-container {
+      background-color: #F8FAFC; 
+      border: 3px solid; 
+      border-color: #fff #808080 #808080 #fff; /* Inset frame simulation */ 
+      box-shadow: 2px 2px 12px rgba(15, 23, 42, 0.15); 
+      max-width: 800px;
+      width: 95%;
+      margin: 30px auto; 
+      padding: 15px;
+    }
+
+    /* 90s Layout Architecture - Table strategy */
+    .master-layout-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    /* Vertical Left Sidebar Command Panel */
+    .sidebar-panel {
+      width: 180px; 
+      background-color: #E2E8F0; 
+      border: 2px inset #fff; 
+      padding: 15px 10px 80px 10px; 
+      vertical-align: top;
+      position: relative; 
+    }
+
+    .sidebar-heading {
+      font-family: "Comic Sans MS", sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      color: #0F172A;
+      text-align: center;
+      margin-bottom: 15px;
+      border-bottom: 1px dashed #64748B;
+      padding-bottom: 4px;
+    }
+
+    /* Vertical Navigation List Styles */
+    .sidebar-nav-list {
+      list-style-type: none; 
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar-nav-list li {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+    }
+
+    .sidebar-link {
+      color: #0000EE; /* Standard authentic Blue unvisited link */ 
+      text-decoration: underline; 
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+    }
+    
+    .sidebar-link:visited {
+      color: #551A8B; 
+    }
+
+    .sidebar-link:hover {
+      color: #BE123C !important; /* Palette 1: Deep Rose Accent */ 
+    }
+
+    .retro-bullet {
+      width: 14px;
+      height: 14px;
+      margin-right: 8px;
+      image-rendering: pixelated;
+    }
+
+    .secret-door-link {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .secret-door-gif {
+      width: 45px;
+      height: auto;
+      display: block;
+      image-rendering: pixelated;
+    }
+
+    /* Right Main Content Panel Area */
+    .content-panel {
+      padding-left: 20px;
+      vertical-align: top;
+    }
+
+    .stacked-header-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .lovebirds-wrapper {
+      margin-bottom: 10px;
+    }
+
+    .title-image-wrapper {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .title-image {
+      width: 100%;
+      max-width: 550px;
+      height: auto;
+      display: inline-block;
+      animation: spin-once 1.5s ease-out 1; 
+    }
+
+    @keyframes spin-once {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Windows 95 Style Dialog Header */
+    .window-box {
+      width: 100%;
+      background-color: #E2E8F0;
+      border: 2px solid;
+      border-color: #fff #808080 #808080 #fff;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+    }
+
+    .window-header {
+      background-color: #0F172A;
+      color: #F8FAFC;
+      font-family: "Comic Sans MS", sans-serif;
+      font-weight: bold;
+      font-size: 13px;
+      padding: 4px 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .window-controls {
+      display: flex;
+      gap: 3px;
+    }
+
+    .win-btn {
+      width: 14px;
+      height: 14px;
+      background-color: #E2E8F0;
+      border: 1px solid;
+      border-color: #fff #808080 #808080 #fff;
+      color: #000;
+      font-size: 9px;
+      line-height: 12px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .window-body {
+      padding: 15px;
+    }
+
+    /* Event Card Styles */
+    .event-card {
+      background-color: #FFFFFF;
+      border: 2px inset #fff;
+      padding: 12px;
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .event-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .event-title-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px dashed #BE123C;
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+    }
+
+    .event-name {
+      font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      color: #BE123C;
+      margin: 0;
+    }
+
+    .event-time {
+      font-family: Courier, monospace;
+      font-size: 13px;
+      font-weight: bold;
+      color: #0F172A;
+      background-color: #E2E8F0;
+      padding: 2px 6px;
+      border: 1px solid #808080;
+    }
+
+    .event-details-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 6px;
+    }
+
+    .event-details-table td {
+      padding: 3px 0;
+      vertical-align: top;
+      font-size: 12px;
+    }
+
+    .label-col {
+      width: 80px;
+      font-weight: bold;
+      color: #475569;
+    }
+
+    hr {
+      border: none;
+      border-top: 2px inset #E2E8F0;
+      margin: 15px 0;
+    }
+
+    .gif-border-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      width: 100%;
+      margin-top: 15px;
+      padding-bottom: 5px;
+    }
+
+    .gif-border-image {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      image-rendering: pixelated;
+    }
+
+    .built-by-text {
+      text-align: center;
+      font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+      font-size: 12px;
+      color: #64748B;
+      margin-top: 12px;
+      margin-bottom: 5px;
+      letter-spacing: 1px;
+    }
+
+    /* Mobile Overrides */
+    @media screen and (max-width: 650px) {
+      .master-layout-table, .master-layout-table tbody, .master-layout-table tr, .master-layout-table td {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box;
+      }
+      .sidebar-panel {
+        margin-bottom: 20px !important;
+        padding: 10px !important;
+      }
+      .sidebar-nav-list {
+        text-align: center;
+      }
+      .sidebar-nav-list li {
+        display: inline-block !important;
+        margin: 5px 10px !important;
+      }
+      .secret-door-link {
+        display: none !important;
+      }
+      .content-panel {
+        padding-left: 0 !important;
+      }
+      .event-title-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+      html, body, a, button {
+        cursor: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="blink-container">
+    <span class="blink-text">*** OFFICIAL WEDDING WEEKEND SCHEDULE ***</span>
+  </div>
+
+  <div class="main-container">
+    
+    <table class="master-layout-table" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <!-- Sidebar Navigation -->
+        <td class="sidebar-panel">
+          <div class="sidebar-heading">NAVIGATION MENU</div>
+          <ul class="sidebar-nav-list">
+            <li>
+              <img src="heart_bullet.gif" alt="*" class="retro-bullet"> <a href="index.html" class="sidebar-link">Home</a>
+            </li>
+            <li>
+              <img src="heart_bullet.gif" alt="*" class="retro-bullet"> <a href="schedule.html" class="sidebar-link" style="color: #BE123C;">Schedule</a>
+            </li>
+            <li>
+              <img src="heart_bullet.gif" alt="*" class="retro-bullet"> <a href="rsvp.html" class="sidebar-link">RSVP</a>
+            </li>
+            <li>
+              <img src="heart_bullet.gif" alt="*" class="retro-bullet"> <a href="travel.html" class="sidebar-link">Travel & Hotels</a>
+            </li>
+            <li>
+              <img src="heart_bullet.gif" alt="*" class="retro-bullet"> <a href="faq.html" class="sidebar-link">FAQ</a>
+            </li>
+          </ul>
+
+          <a href="pinball.html" class="secret-door-link" title="???">
+            <img src="door.gif" alt="Secret Door" class="secret-door-gif">
+          </a>
+        </td>
+
+        <!-- Main Content Area -->
+        <td class="content-panel">
+          
+          <div class="stacked-header-container">
+            <div class="lovebirds-wrapper">
+              <img src="lovebirdstop.gif" alt="Love Birds Animated GIF" border="0">
+            </div>
+
+            <div class="title-image-wrapper">
+              <img src="hannah-andy-title.png" alt="Hannah & Andy" class="title-image">
+            </div>
+          </div>
+
+          <!-- Schedule Window Box -->
+          <div class="window-box">
+            <div class="window-header">
+              <span>📅 RUN_OF_SHOW.EXE</span>
+              <div class="window-controls">
+                <div class="win-btn">_</div>
+                <div class="win-btn">□</div>
+                <div class="win-btn">X</div>
+              </div>
+            </div>
+            
+            <div class="window-body">
+
+              <!-- Event 1: Welcome Party -->
+              <div class="event-card">
+                <div class="event-title-bar">
+                  <h2 class="event-name">1. Welcome Drinks</h2>
+                  <span class="event-time">Sept 23 @ 7:00 PM</span>
+                </div>
+                <table class="event-details-table">
+                  <tr>
+                    <td class="label-col">WHERE:</td>
+                    <td>Local Brewery Taproom (TBD)</td>
+                  </tr>
+                  <tr>
+                    <td class="label-col">ATTIRE:</td>
+                    <td>Casual / Smart Casual</td>
+                  </tr>
+                  <tr>
+                    <td class="label-col">DETAILS:</td>
+                    <td>Kick off the weekend with some drinks and light bites! First round is on us.</td>
+                  </tr>
+                </table>
+              </div>
+
+              <!-- Event 2: The Main Event -->
+              <div class="event-card">
+                <div class="event-title-bar">
+                  <h2 class="event-name">2. The Wedding</h2>
+                  <span class="event-time">Sept 24 @ 5:00 PM</span>
+                </div>
+                <table class="event-details-table">
+                  <tr>
+                    <td class="label-col">WHERE:</td>
+                    <td>American Visionary Art Museum</td>
+                  </tr>
+                  <tr>
+                    <td class="label-col">ATTIRE:</td>
+                    <td>Cocktail / Semi-Formal</td>
+                  </tr>
+                  <tr>
+                    <td class="label-col">DETAILS:</td>
+                    <td>Ceremony starts promptly at 5:30 PM, followed immediately by cocktail hour, dinner, and dancing!</td>
+                  </tr>
+                </table>
+              </div>
+
+              <!-- Event 3: After Party -->
+              <div class="event-card">
+                <div class="event-title-bar">
+                  <h2 class="event-name">3. After Party</h2>
+                  <span class="event-time">Sept 24 @ 11:00 PM</span>
+                </div>
+                <table class="event-details-table">
+                  <tr>
+                    <td class="label-col">WHERE:</td>
+                    <td>AVAM Sculpture Barn / Nearby Pub</td>
+                  </tr>
+                  <tr>
+                    <td class="label-col">ATTIRE:</td>
+                    <td>Come as you are / Dancing shoes</td>
+                  </tr>
+                  <tr>
+                    <td class="label-col">DETAILS:</td>
+                    <td>For the night owls! Late-night snacks, retro arcade machines, and high-energy tunes.</td>
+                  </tr>
+                </table>
+              </div>
+
+              <!-- Event 4: Farewell Brunch -->
+              <div class="event-card">
+                <div class="event-title-bar">
+                  <h2 class="event-name">4. Farewell Brunch</h2>
+                  <span class="event-time">Sept 25 @ 10:00 AM</span>
+                </div>
+                <table class="event-details-table">
+                  <tr>
+                    <td class="label-col">WHERE:</td>
+                    <td>Hotel Courtyard / Harbor Park</td>
+                  </tr>
+                  <tr>
+                    <td class="label-col">ATTIRE:</td>
+                    <td>Cozy & Casual</td>
+                  </tr>
+                  <tr>
+                    <td class="label-col">DETAILS:</td>
+                    <td>Drop in anytime between 10 AM – 1 PM for bagels, coffee, and goodbye hugs before hitting the road.</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+
+          <p style="text-align: center; font-style: italic; margin: 15px 0; color: #334155; font-weight: bold;">
+            * Timings subject to slight adjustments. Check back closer to the date! *
+          </p>
+
+          <hr>
+
+          <div class="gif-border-container">
+            <img src="garden.gif" alt="Decorative Divider Line" class="gif-border-image">
+          </div>
+
+          <p class="built-by-text">Built By Us &lt;3</p>
+
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</body>
+</html>
