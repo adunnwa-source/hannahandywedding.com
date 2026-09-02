@@ -380,30 +380,84 @@
               <span>🗺️ Map Viewer</span>
             </div>
 
-            <!-- EMBEDDED GOOGLE MAP (Plotted to Baltimore, MD with Sonesta & AVAM coordinates) -->
-            <div class="map-frame-container">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d12351.488661608775!2d-76.6163351604313!3d39.27961139158327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e2!4m5!1s0x89c80366b5791739%3A0x6b4c6e93172e2cfc!2sThe%20Royal%20Sonesta%20Harbor%20Court%20Baltimore%2C%20550%20Light%20St%2C%20Baltimore%2C%20MD%2021202!3m2!1d39.2842095!2d-76.6127116!4m5!1s0x89c80362f6b8c9ad%3A0x4ba801a6b0cfa0b!2sAmerican%20Visionary%20Art%20Museum%2C%20800%20Key%20Hwy%2C%20Baltimore%2C%20MD%2021230!3m2!1d39.279822!2d-76.6067098!5e0!3m2!1sen!2sus!4v1710000000000!5m2!1sen!2sus" 
-                width="100%" 
-                height="100%" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
-            </div>
-
-            <!-- MAP KEY / EVENT TELEMETRY -->
-            <div class="map-legend">
-              <strong>BALTIMORE KEY LOCATIONS GRID:</strong>
-              <ul style="margin: 5px 0 0 0; padding-left: 20px;">
-                <li><span style="color: #BE123C; font-weight: bold;">[A] Hotel Block Base:</span> The Royal Sonesta (550 Light St)</li>
-                <li><span style="color: #BE123C; font-weight: bold;">[B] Main Event Barn:</span> American Visionary Art Museum (800 Key Hwy)</li>
-                <li style="color: #64748B; font-style: italic;">[C] Welcome Drinks Reception: (TBD!)</li>
-                <li style="color: #64748B; font-style: italic;">[D] Late Night Afterparty: (TBD!)</li>
-              </ul>
-            </div>
-          </div>
+            <!-- EMBEDDED GOOGLE MY MAPS (Interactive Baltimore Locations) -->
+              <style>
+                .map-frame-container {
+                  position: relative;
+                  width: 100%;
+                  height: 450px;
+                  border-radius: 8px;
+                  overflow: hidden;
+                  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+                }
+                .map-legend {
+                  margin-top: 16px;
+                  padding: 16px;
+                  background-color: #F8FAFC;
+                  border: 1px solid #E2E8F0;
+                  border-radius: 8px;
+                  font-family: inherit;
+                }
+                .map-legend ul {
+                  list-style: none;
+                  padding: 0;
+                  margin: 8px 0 0 0;
+                }
+                .map-legend li {
+                  margin-bottom: 8px;
+                  font-size: 14px;
+                  color: #334155;
+                }
+                .walk-link {
+                  color: #2563EB;
+                  text-decoration: none;
+                  font-size: 12px;
+                  margin-left: 6px;
+                }
+                .walk-link:hover {
+                  text-decoration: underline;
+                }
+              </style>
+              
+              <div class="map-frame-container">
+                <iframe 
+                  id="custom-google-map"
+                  src="https://www.google.com/maps/d/embed?mid=1qCNjaX3dUxL15zP5_nxPuLkQ9JER844&ehbc=2E312F" 
+                  width="100%" 
+                  height="100%" 
+                  style="border:0;" 
+                  allowfullscreen="" 
+                  loading="lazy">
+                </iframe>
+              </div>
+              
+              <!-- MAP KEY / EVENT TELEMETRY -->
+              <div class="map-legend">
+                <strong>BALTIMORE KEY LOCATIONS & WALKING GUIDE:</strong>
+                <ul>
+                  <li>
+                    <span style="color: #BE123C; font-weight: bold;">[A] Hotel Base:</span> The Royal Sonesta (550 Light St)
+                  </li>
+                  <li>
+                    <span style="color: #BE123C; font-weight: bold;">[B] Main Event Barn:</span> American Visionary Art Museum (800 Key Hwy)
+                    <br>
+                    <a class="walk-link" href="https://www.google.com/maps/dir/?api=1&origin=The+Royal+Sonesta+Harbor+Court+Baltimore&destination=American+Visionary+Art+Museum&travelmode=walking" target="_blank">🚶 10 min walk from Hotel</a>
+                  </li>
+                  <li>
+                    <span style="color: #BE123C; font-weight: bold;">[C] Farewell Brunch:</span> Little Havana (1325 Key Hwy)
+                    <br>
+                    <a class="walk-link" href="https://www.google.com/maps/dir/?api=1&origin=American+Visionary+Art+Museum&destination=Little+Havana+Baltimore&travelmode=walking" target="_blank">🚶 12 min walk from AVAM</a>
+                    <span style="color: #94A3B8;">|</span>
+                    <a class="walk-link" href="https://www.google.com/maps/dir/?api=1&origin=The+Royal+Sonesta+Harbor+Court+Baltimore&destination=Little+Havana+Baltimore&travelmode=walking" target="_blank">18 min walk from Hotel</a>
+                  </li>
+                  <li style="color: #64748B; font-style: italic;">
+                    <span>[D] Welcome Drinks Reception:</span> (TBD!)
+                  </li>
+                  <li style="color: #64748B; font-style: italic;">
+                    <span>[E] Late Night Afterparty:</span> (TBD!)
+                  </li>
+                </ul>
+              </div>
 
           <!-- STEP BY STEP DIRECTIONS -->
           <div class="info-window" style="margin-top: 15px;">
