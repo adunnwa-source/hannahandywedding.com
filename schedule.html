@@ -3,26 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Schedule of Events - Hannah & Andy's Wedding</title>
+  <title>Schedule - Hannah Lang & Andy Dunn</title>
   <style>
-    /* Custom Retro Cursor Setup with Standard Fallback */
+    /* ---------------------------------------------------
+       GLOBAL & LAYOUT STYLES (From your index.html)
+    --------------------------------------------------- */
     html, body, a, button {
       cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0v16.043l4.113-3.882 3.195 7.126 3.167-1.42-3.14-7.013h5.452z" fill="white" stroke="black" stroke-width="2"/></svg>'), auto; 
     }
     
     body {
-      /* Tiled Cloud Background Integration (Matching Index Page) */
       background-image: url('imagine_cloud_blue.jpg');
       background-repeat: repeat;
       background-color: #a3c2e0; 
       font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
       font-size: 13px;
-      color: #0F172A; /* Deep Navy Text */
+      color: #0F172A; 
       margin: 0;
       padding: 0;
     }
 
-    /* Full-width Blinking Text Banner Alert */
     .blink-container {
       background-color: #0F172A; 
       color: #F8FAFC; 
@@ -36,47 +36,42 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
     }
 
-    /* Pure CSS Safe Blinking Animation */
     .blink-text {
       animation: retro-blink 2.5s ease-in-out infinite;
     }
+    
     @media (prefers-reduced-motion: reduce) {
-      .blink-text {
-        animation: none; 
-      }
+      .blink-text { animation: none; }
     }
 
     @keyframes retro-blink {
       0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
+      50% { opacity: 0.3; } 
     }
     
-    /* Outer Framework Container - Matching Index Page Page-Shell */
     .main-container {
       background-color: #F8FAFC; 
       border: 3px solid; 
-      border-color: #fff #808080 #808080 #fff; /* Classic 90s Inset Frame */ 
-      box-shadow: 4px 4px 0px #0F172A, 6px 6px 12px rgba(15, 23, 42, 0.2); 
+      border-color: #fff #808080 #808080 #fff; 
+      box-shadow: 2px 2px 12px rgba(15, 23, 42, 0.15); 
       max-width: 800px;
       width: 95%;
       margin: 30px auto; 
       padding: 15px;
     }
 
-    /* 90s Layout Architecture - Table strategy */
     .master-layout-table {
       width: 100%;
       border-collapse: collapse;
     }
 
-    /* EXACT SIDEBAR FROM INDEX PAGE */
     .sidebar-panel {
-      width: 180px; /* Explicit width constraint */
-      background-color: #E2E8F0; /* Stark, high contrast background */ 
-      border: 2px inset #fff; /* Recessed look */
-      padding: 15px 10px 80px 10px; /* Extra bottom padding to clear secret door */
+      width: 180px; 
+      background-color: #E2E8F0; 
+      border: 2px inset #fff; 
+      padding: 15px 10px 80px 10px; 
       vertical-align: top;
-      position: relative; /* Allows absolute placement of the secret door link */
+      position: relative; 
     }
 
     .sidebar-heading {
@@ -90,7 +85,6 @@
       padding-bottom: 4px;
     }
 
-    /* Vertical Navigation List Styles */
     .sidebar-nav-list {
       list-style-type: none; 
       padding: 0;
@@ -103,9 +97,8 @@
       align-items: center;
     }
 
-    /* Period-Accurate Un-styled, Blue Underlined Link Targets */
     .sidebar-link {
-      color: #0000EE; /* Standard authentic Blue unvisited link */ 
+      color: #0000EE; 
       text-decoration: underline; 
       font-family: Arial, Helvetica, sans-serif;
       font-size: 13px;
@@ -113,14 +106,13 @@
     }
     
     .sidebar-link:visited {
-      color: #551A8B; /* Standard purple visited link color */
+      color: #551A8B; 
     }
 
     .sidebar-link:hover {
-      color: #BE123C !important; /* Deep Rose Accent */ 
+      color: #BE123C !important; 
     }
 
-    /* Animated Pixel Bullet Points placement */
     .retro-bullet {
       width: 14px;
       height: 14px;
@@ -128,7 +120,6 @@
       image-rendering: pixelated; 
     }
 
-    /* Secret Pinball Door Wrapper Styles */
     .secret-door-link {
       position: absolute;
       bottom: 10px;
@@ -144,189 +135,111 @@
       image-rendering: pixelated;
     }
 
-    /* Right Main Content Panel Area */
     .content-panel {
       padding-left: 20px;
       vertical-align: top;
     }
 
-    /* LOW CINEMA / TAMAGOTCHI HEADER BOX */
-    .schedule-header-box {
-      background-color: #E2E8F0;
-      border: 2px solid;
-      border-color: #808080 #fff #fff #808080; /* Inset Box Look */
-      padding: 12px;
+    /* ---------------------------------------------------
+       RETRO SCHEDULE STYLES (Dark Mode / Neon / Geocities)
+    --------------------------------------------------- */
+    .retro-schedule-window {
+      background-color: #000000;
+      background-image: url('stars_bg.gif'); /* A classic tiling stars background */
+      color: #FFFFFF;
+      border: 4px inset #808080;
+      padding: 20px;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    .retro-schedule-window h1 {
       text-align: center;
-      margin-bottom: 20px;
-      position: relative;
+      color: #FFFF00; /* Neon Yellow */
+      font-family: "Comic Sans MS", sans-serif;
+      text-decoration: underline;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px #FF0000;
     }
 
-    /* Tamagotchi / Sims Status Bar Banner Accent */
-    .header-bar-top {
-      background-color: #0F172A;
-      color: #00FFCC;
+    .retro-marquee {
+      color: #00FF00; /* Neon Green */
       font-family: Courier, monospace;
-      font-size: 10px;
-      padding: 2px 6px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-      display: inline-block;
-      border: 1px inset #808080;
-    }
-
-    .schedule-title {
-      font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
-      color: #BE123C;
-      font-size: 20px;
+      font-size: 16px;
       font-weight: bold;
-      margin: 0;
-      letter-spacing: 0.5px;
+      background-color: #111;
+      border: 2px solid #00FF00;
+      padding: 4px;
+      margin-bottom: 20px;
     }
 
-    .schedule-subtitle {
-      font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
-      color: #475569;
-      font-size: 12px;
-      margin-top: 4px;
-      font-style: italic;
-    }
-
-    /* SIMS & GEOCITIES STYLE UTILITY TIME TABLE */
-    .time-table {
+    .retro-schedule-table {
       width: 100%;
       border-collapse: separate;
-      border-spacing: 0;
-      border: 2px solid;
-      border-color: #808080 #fff #fff #808080; /* Inset Frame */
-      background-color: #FFFFFF;
-      margin-bottom: 20px;
-      box-shadow: 2px 2px 0px #CBD5E1;
+      border-spacing: 4px;
+      border: 5px outset #808080;
+      background-color: #1a1a1a;
     }
 
-    .time-table th {
-      background-color: #CBD5E1;
-      color: #0F172A;
-      font-family: "Comic Sans MS", "Arial", sans-serif;
-      font-size: 12px;
-      font-weight: bold;
-      padding: 6px 10px;
-      text-align: left;
-      border-bottom: 2px solid #94A3B8;
-      border-right: 1px solid #CBD5E1;
-    }
-
-    .time-table td {
-      padding: 10px;
-      border-bottom: 1px dotted #94A3B8;
+    .retro-schedule-table td {
+      border: 3px inset #808080;
+      padding: 12px;
       vertical-align: top;
-      font-family: "MS Sans Serif", Tahoma, sans-serif;
     }
 
-    .time-table tr:last-child td {
-      border-bottom: none;
+    .retro-time-cell {
+      width: 35%;
+      background-color: #222;
     }
 
-    .time-table tr:nth-child(even) {
-      background-color: #F8FAFC;
-    }
-
-    /* Low-Cinema VHS / Digital Clock Badge */
     .time-badge {
-      background-color: #0F172A;
-      color: #FFFF00; /* VHS Display Yellow */
-      font-weight: bold;
+      background-color: #FF00FF; /* Neon Magenta */
+      color: #FFFFFF;
       font-family: Courier, monospace;
-      font-size: 11px;
+      font-weight: bold;
       padding: 2px 6px;
-      border: 1px inset #808080;
+      border: 1px solid #FFF;
       display: inline-block;
-      margin-bottom: 4px;
-      white-space: nowrap;
+      margin-bottom: 5px;
     }
 
     .event-title {
-      font-family: "Comic Sans MS", cursive, sans-serif;
-      font-size: 15px;
-      color: #BE123C; /* Deep Rose */
+      color: #FFFF00;
+      font-family: "Comic Sans MS", sans-serif;
+      font-size: 18px;
       font-weight: bold;
-      margin: 0 0 4px 0;
+      margin-bottom: 4px;
     }
 
     .event-location {
+      color: #00FFFF; /* Cyan */
       font-weight: bold;
-      color: #0F172A;
-      font-size: 12px;
-      font-family: Arial, sans-serif;
+      font-size: 14px;
+      margin-bottom: 8px;
     }
 
     .event-desc {
-      font-size: 12px;
-      color: #334155;
-      margin-top: 5px;
+      color: #F8FAFC;
+      font-size: 14px;
       line-height: 1.4;
     }
 
     .tag-attire {
-      background-color: #FEF08A; /* Retro Yellow Tag */
-      color: #0F172A;
-      font-size: 10px;
-      font-weight: bold;
-      font-family: Arial, sans-serif;
-      padding: 2px 5px;
-      border: 1px solid #94A3B8;
-      display: inline-block;
-      text-transform: uppercase;
-      box-shadow: 1px 1px 0px #000;
-    }
-
-    /* Antonio Banderas 1995 Low-Cinema Video Note Box */
-    .cinema-note-box {
-      background-color: #1E293B;
-      border: 2px inset #CBD5E1;
-      padding: 10px;
-      color: #38BDF8; /* Terminal Sky Blue */
-      font-family: Courier, monospace;
-      font-size: 11px;
-      margin-bottom: 15px;
-      text-align: center;
-    }
-
-    hr {
-      border: none;
-      border-top: 2px inset #E2E8F0;
-      margin: 15px 0;
-    }
-
-    /* Footer GIF & Text */
-    .gif-border-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      width: 100%;
-      margin-top: 15px;
-      padding-bottom: 5px;
-    }
-
-    .gif-border-image {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      image-rendering: pixelated;
-    }
-
-    .built-by-text {
-      text-align: center;
-      font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+      background-color: #0000FF; /* Pure Blue */
+      color: #FFFFFF;
+      border: 1px dashed #00FFFF;
+      padding: 2px 6px;
       font-size: 12px;
-      color: #64748B;
-      margin-top: 12px;
-      margin-bottom: 5px;
-      letter-spacing: 1px;
+      font-family: Arial, sans-serif;
     }
 
-    /* Mobile Viewport Responsiveness */
+    .hit-counter {
+      text-align: center;
+      margin-top: 20px;
+      font-family: Courier, monospace;
+      color: #00FF00;
+    }
+
+    /* Mobile overrides */
     @media screen and (max-width: 650px) {
       .master-layout-table, .master-layout-table tbody, .master-layout-table tr, .master-layout-table td {
         display: block !important;
@@ -350,15 +263,8 @@
       .content-panel {
         padding-left: 0 !important;
       }
-      .time-table, .time-table tbody, .time-table tr, .time-table td {
-        display: block !important;
-        width: 100% !important;
-      }
-      .time-table th {
-        display: none; /* Hide table headers on mobile stack */
-      }
-      .time-table td {
-        border-bottom: 1px solid #CBD5E1;
+      .retro-time-cell {
+        width: 100%;
       }
       html, body, a, button {
         cursor: auto !important; 
@@ -368,7 +274,6 @@
 </head>
 <body>
 
-  <!-- Top Banner Animation -->
   <div class="blink-container">
     <span class="blink-text">*** WE'RE GETTING MARRIED!!! ***</span>
   </div>
@@ -377,7 +282,7 @@
     
     <table class="master-layout-table" border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <!-- Sidebar Navigation (Exact Match to Index Page) -->
+        <!-- LEFT SIDEBAR NAVIGATION -->
         <td class="sidebar-panel">
           <div class="sidebar-heading">NAVIGATION MENU</div>
           <ul class="sidebar-nav-list">
@@ -403,107 +308,94 @@
           </a>
         </td>
 
-        <!-- Main Content Panel Area -->
+        <!-- RIGHT MAIN CONTENT PANEL -->
         <td class="content-panel">
           
-          <!-- Low-Cinema / Tamagotchi Styled Header Box -->
-          <div class="schedule-header-box">
-            <div class="header-bar-top">[ LOW-CINEMA THEATER SCHEDULE ]</div>
-            <h1 class="schedule-title">Run of Show</h1>
-            <div class="schedule-subtitle">Official Wedding Weekend Itinerary & Event Timeline</div>
+          <!-- GEOCITIES SCHEDULE WINDOW -->
+          <div class="retro-schedule-window">
+            
+            <h1>Event Schedule</h1>
+            
+            <marquee class="retro-marquee" scrollamount="5">
+              &gt;&gt;&gt; DON'T BE LATE! CEREMONY STARTS PROMPTLY AT 5:00 PM &lt;&lt;&lt; 
+            </marquee>
+
+            <table class="retro-schedule-table">
+              <tbody>
+                <!-- Event 1 -->
+                <tr>
+                  <td class="retro-time-cell">
+                    <span class="time-badge">THURSDAY 09/23</span><br>
+                    <strong style="font-size: 13px; color: #00FF00;">7:00 PM - 10:00 PM</strong>
+                  </td>
+                  <td>
+                    <div class="event-title">Welcome Drinks</div>
+                    <div class="event-location">Location: Crossbar Der Biergarten</div>
+                    <div class="event-desc">
+                      Kick off the weekend with us!
+                    </div>
+                    <div style="margin-top: 10px;">
+                      <span class="tag-attire">Attire: Casual</span>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Event 2 -->
+                <tr>
+                  <td class="retro-time-cell">
+                    <span class="time-badge">FRIDAY 09/24</span><br>
+                    <strong style="font-size: 13px; color: #00FF00;">4:30 PM - 10:00 PM</strong>
+                  </td>
+                  <td>
+                    <div class="event-title">The Wedding Ceremony & Reception</div>
+                    <div class="event-location">Location: American Visionary Art Museum</div>
+                    <div class="event-desc">
+                      Ceremony starts promptly at 5:00 PM, so please plan to arrive 15-30 minutes early to find a seat. Cocktail hour, dinner, and dancing to follow!
+                    </div>
+                    <div style="margin-top: 10px;">
+                      <span class="tag-attire">Attire: Cocktail / Semi-Formal</span>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Event 3 -->
+                <tr>
+                  <td class="retro-time-cell">
+                    <span class="time-badge">FRIDAY 09/24</span><br>
+                    <strong style="font-size: 13px; color: #00FF00;">10:00 PM</strong>
+                  </td>
+                  <td>
+                    <div class="event-title">After Party</div>
+                    <div class="event-location">Location: TBD in Federal Hill</div>
+                  </td>
+                </tr>
+
+                <!-- Event 4 -->
+                <tr>
+                  <td class="retro-time-cell">
+                    <span class="time-badge">SATURDAY 09/25</span><br>
+                    <strong style="font-size: 13px; color: #00FF00;">10:00 AM - 12:30 PM</strong>
+                  </td>
+                  <td>
+                    <div class="event-title">Farewell Brunch</div>
+                    <div class="event-location">Location: Little Havana</div>
+                    <div class="event-desc">
+                      Stop by for coffee and food!
+                    </div>
+                    <div style="margin-top: 10px;">
+                      <span class="tag-attire">Attire: Casual</span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="hit-counter">
+              <p>You are visitor number:</p>
+              <img src="counter.gif" alt="000142" style="border: 2px inset #fff; image-rendering: pixelated;">
+            </div>
+
           </div>
-
-          <!-- Quick Utility Note -->
-          <div class="cinema-note-box">
-            REC ● 1995-09-24 [SYSTEM STATUS: ALL EVENTS ON SCHEDULE]
-          </div>
-
-          <!-- Schedule Grid / Portal Table -->
-          <table class="time-table">
-            <thead>
-              <tr>
-                <th style="width: 32%;">DATE / TIME</th>
-                <th style="width: 68%;">EVENT DETAILS</th>
-              </tr>
-            </thead>
-            <tbody>
-
-              <!-- Event 1 -->
-              <tr>
-                <td>
-                  <span class="time-badge">THURSDAY 09/23</span><br>
-                  <strong style="font-size: 11px; color: #0F172A;">7:00 PM - 10:00 PM</strong>
-                </td>
-                <td>
-                  <div class="event-title">Welcome Drinks</div>
-                  <div class="event-location">Location: Crossbar Der Biergarten</div>
-                  <div class="event-desc">
-                    Kick off the weekend with us!
-                  </div>
-                  <div style="margin-top: 6px;">
-                    <span class="tag-attire">Attire: Casual</span>
-                  </div>
-                </td>
-              </tr>
-
-              <!-- Event 2 -->
-              <tr>
-                <td>
-                  <span class="time-badge">FRIDAY 09/24</span><br>
-                  <strong style="font-size: 11px; color: #0F172A;">4:30 PM - 10:00 PM</strong>
-                </td>
-                <td>
-                  <div class="event-title">The Wedding Ceremony & Reception</div>
-                  <div class="event-location">Location: American Visionary Art Museum</div>
-                  <div class="event-desc">
-                    Ceremony starts promptly at 5:00 PM, so please plan to arrive 15-30 minutes early to find a seat. Cocktail hour, dinner, and dancing to follow!
-                  </div>
-                  <div style="margin-top: 6px;">
-                    <span class="tag-attire">Attire: Cocktail / Semi-Formal</span>
-                  </div>
-                </td>
-              </tr>
-
-              <!-- Event 3 -->
-              <tr>
-                <td>
-                  <span class="time-badge">FRIDAY 09/24</span><br>
-                  <strong style="font-size: 11px; color: #0F172A;">10:00 PM</strong>
-                </td>
-                <td>
-                  <div class="event-title">After Party</div>
-                  <div class="event-location">Location: TBD in Federal Hill</div>
-                </td>
-              </tr>
-
-              <!-- Event 4 -->
-              <tr>
-                <td>
-                  <span class="time-badge">SATURDAY 09/25</span><br>
-                  <strong style="font-size: 11px; color: #0F172A;">10:00 AM - 12:30 PM</strong>
-                </td>
-                <td>
-                  <div class="event-title">Farewell Brunch</div>
-                  <div class="event-location">Location: Little Havana</div>
-                  <div class="event-desc">
-                    Stop by for coffee and food!
-                  </div>
-                  <div style="margin-top: 6px;">
-                    <span class="tag-attire">Attire: Casual</span>
-                  </div>
-                </td>
-              </tr>
-
-            </tbody>
-          </table>
-
-          <hr>
-
-          <div class="gif-border-container">
-            <img src="garden.gif" alt="Decorative Divider Line" class="gif-border-image">
-          </div>
-
-          <p class="built-by-text">Built By Us &lt;3</p>
 
         </td>
       </tr>
