@@ -6,7 +6,7 @@
   <title>Schedule - Hannah Lang & Andy Dunn</title>
   <style>
     /* ---------------------------------------------------
-       #6 ENLARGED RETRO CURSOR SETUP
+       ENLARGED RETRO CURSOR SETUP
     --------------------------------------------------- */
     html, body, a, button {
       cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><path d="M0 0v16.043l4.113-3.882 3.195 7.126 3.167-1.42-3.14-7.013h5.452z" fill="white" stroke="black" stroke-width="2"/></svg>'), auto; 
@@ -16,11 +16,12 @@
       background-image: url('imagine_cloud_blue.jpg');
       background-repeat: repeat;
       background-color: #a3c2e0; 
-      font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
-      font-size: 13px;
+      font-family: Tahoma, "MS Sans Serif", Arial, sans-serif;
+      font-size: 15px; /* Increased base body font size */
       color: #0F172A; 
       margin: 0;
       padding: 0;
+      line-height: 1.4;
     }
 
     /* ---------------------------------------------------
@@ -31,7 +32,7 @@
       border: 3px solid; 
       border-color: #fff #808080 #808080 #fff; 
       box-shadow: 2px 2px 12px rgba(15, 23, 42, 0.15); 
-      max-width: 800px;
+      max-width: 840px;
       width: 95%;
       margin: 30px auto; 
       padding: 15px;
@@ -43,22 +44,23 @@
     }
 
     .sidebar-panel {
-      width: 180px; 
+      width: 190px; 
       background-color: #E2E8F0; 
       border: 2px inset #fff; 
-      padding: 15px 10px 30px 10px; 
+      padding: 15px 12px 30px 12px; 
       vertical-align: top;
     }
 
     .sidebar-heading {
       font-family: "Comic Sans MS", sans-serif;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: bold;
       color: #0F172A;
       text-align: center;
       margin-bottom: 15px;
       border-bottom: 1px dashed #64748B;
       padding-bottom: 4px;
+      letter-spacing: 0.5px;
     }
 
     .sidebar-nav-list {
@@ -68,7 +70,7 @@
     }
 
     .sidebar-nav-list li {
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       display: flex;
       align-items: center;
     }
@@ -77,7 +79,7 @@
       color: #0000EE; 
       text-decoration: underline; 
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 13px;
+      font-size: 14px; /* Bumped up sidebar link size */
       font-weight: bold;
     }
     
@@ -102,7 +104,7 @@
     }
 
     /* ---------------------------------------------------
-       #1 RAINBOW BAR SEPARATOR
+       RAINBOW BAR SEPARATOR
     --------------------------------------------------- */
     .rainbow-bar {
       height: 4px;
@@ -112,18 +114,18 @@
     }
 
     /* ---------------------------------------------------
-       SCHEDULE CONTENT AREA
+       SCHEDULE CONTENT AREA & TYPOGRAPHY
     --------------------------------------------------- */
     .schedule-title {
       font-family: "Times New Roman", Times, serif;
-      font-size: 26px;
+      font-size: 30px; /* Enlarged main header */
       font-weight: bold;
       color: #000080; /* Windows Navy */
       text-align: center;
       margin: 10px 0 15px 0;
     }
 
-    /* #2 TABLE LAYOUT WITH WINDOWS 95 3D BEVEL & BEVEL CELL CONTAINERS */
+    /* TABLE LAYOUT WITH WINDOWS 95 3D BEVEL */
     .retro-schedule-table {
       width: 100%;
       border-collapse: separate;
@@ -135,13 +137,13 @@
 
     .retro-schedule-table td {
       border: 2px inset #808080;
-      padding: 10px 12px;
+      padding: 12px 14px;
       vertical-align: top;
     }
 
-    /* #3 ASYMMETRICAL CELL TINTING (Gray Left Column vs Pure White Right) */
+    /* ASYMMETRICAL CELL TINTING */
     .time-cell {
-      width: 32%;
+      width: 34%;
       background-color: #E0E0E0 !important; /* Recessed Gray Accent */
     }
 
@@ -149,64 +151,66 @@
       background-color: #FFFFFF !important; /* Pure White Reading Panel */
     }
 
-    /* #4 DOTTED DIVIDER BETWEEN MULTI-EVENT DAYS (Friday Events) */
+    /* DOTTED DIVIDER BETWEEN MULTI-EVENT DAYS */
     .multi-event-divider td {
       border-bottom: 2px dashed #999999 !important;
     }
 
-    /* #2 MICRO-TYPOGRAPHY & UPPERCASE BADGES */
+    /* ENLARGED MICRO-TYPOGRAPHY & BADGES */
     .time-badge {
       background-color: #008080; /* Windows Teal */
       color: #FFFFFF;
-      font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
+      font-family: Tahoma, "MS Sans Serif", Arial, sans-serif;
       font-weight: bold;
-      font-size: 11px;
+      font-size: 13px; /* Bumped up from 11px */
       text-transform: uppercase;
       letter-spacing: 1px;
-      padding: 3px 6px;
+      padding: 4px 8px;
       border: 1px outset #FFFFFF;
       display: inline-block;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .time-range {
-      font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
-      font-size: 11px;
+      font-family: Tahoma, "MS Sans Serif", Arial, sans-serif;
+      font-size: 14px; /* Bumped up time range readability */
       font-weight: bold;
       color: #000000;
       letter-spacing: 0.5px;
+      display: inline-block;
+      margin-top: 2px;
     }
 
     .event-title {
       color: #800000; /* Windows Maroon */
       font-family: "Times New Roman", Times, serif;
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 4px;
-    }
-
-    .event-location {
-      color: #000080; /* Windows Navy Blue */
-      font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
-      font-size: 12px;
+      font-size: 20px; /* Enlarged event title */
       font-weight: bold;
       margin-bottom: 6px;
     }
 
+    .event-location {
+      color: #000080; /* Windows Navy Blue */
+      font-family: Tahoma, "MS Sans Serif", Arial, sans-serif;
+      font-size: 14px; /* Bumped up location text */
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
     .event-desc {
       color: #000000;
-      font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
-      font-size: 12px;
-      line-height: 1.4;
+      font-family: Tahoma, "MS Sans Serif", Arial, sans-serif;
+      font-size: 14px; /* Bumped up event descriptions */
+      line-height: 1.5;
     }
 
     .tag-attire {
       background-color: #F1F5F9;
       color: #000080;
       border: 1px solid #808080;
-      padding: 2px 6px;
-      font-size: 10px;
-      font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
+      padding: 3px 8px;
+      font-size: 12px; /* Bumped up attire tag text */
+      font-family: Tahoma, "MS Sans Serif", Arial, sans-serif;
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -217,11 +221,13 @@
       text-align: center;
       margin-top: 20px;
       font-family: Courier, monospace;
-      font-size: 12px;
+      font-size: 13px;
       color: #000000;
     }
 
-    /* Mobile overrides */
+    /* ---------------------------------------------------
+       MOBILE VIEWPORT RESPONSIVENESS & ACCESSIBILITY OVERRIDES
+    --------------------------------------------------- */
     @media screen and (max-width: 650px) {
       .master-layout-table, .master-layout-table tbody, .master-layout-table tr, .master-layout-table td {
         display: block !important;
@@ -230,14 +236,14 @@
       }
       .sidebar-panel {
         margin-bottom: 20px !important;
-        padding: 10px !important;
+        padding: 12px !important;
       }
       .sidebar-nav-list {
         text-align: center;
       }
       .sidebar-nav-list li {
         display: inline-block !important;
-        margin: 5px 10px !important;
+        margin: 6px 12px !important;
       }
       .content-panel {
         padding-left: 0 !important;
@@ -245,6 +251,26 @@
       .time-cell {
         width: 100% !important;
       }
+      
+      /* Mobile text size overrides for maximum clarity */
+      body, .event-desc {
+        font-size: 15px !important;
+      }
+      .event-location, .time-range {
+        font-size: 15px !important;
+      }
+      .time-badge {
+        font-size: 13px !important;
+        padding: 5px 10px !important;
+      }
+      .tag-attire {
+        font-size: 12px !important;
+        padding: 4px 8px !important;
+      }
+      .schedule-title {
+        font-size: 26px !important;
+      }
+
       html, body, a, button {
         cursor: auto !important; 
       }
@@ -257,7 +283,7 @@
     
     <table class="master-layout-table" border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <!-- LEFT SIDEBAR NAVIGATION MENU (CONSISTENT ACROSS SITE) -->
+        <!-- LEFT SIDEBAR NAVIGATION MENU -->
         <td class="sidebar-panel">
           <div class="sidebar-heading">NAVIGATION MENU</div>
           <ul class="sidebar-nav-list">
@@ -289,7 +315,7 @@
           <!-- TOP RAINBOW BAR -->
           <div class="rainbow-bar"></div>
 
-          <!-- EVENT SCHEDULE TABLE (WIN 95 PALETTE & TINTED CELLS) -->
+          <!-- EVENT SCHEDULE TABLE -->
           <table class="retro-schedule-table">
             <tbody>
               <!-- Event 1: Thursday -->
@@ -304,7 +330,7 @@
                   <div class="event-desc">
                     Kick off the weekend with us!
                   </div>
-                  <div style="margin-top: 8px;">
+                  <div style="margin-top: 10px;">
                     <span class="tag-attire">Attire: Casual</span>
                   </div>
                 </td>
@@ -322,7 +348,7 @@
                   <div class="event-desc">
                     Ceremony starts promptly at 5:00 PM, so please plan to arrive 15-30 minutes early to find a seat. Cocktail hour, dinner, and dancing to follow!
                   </div>
-                  <div style="margin-top: 8px;">
+                  <div style="margin-top: 10px;">
                     <span class="tag-attire">Attire: Cocktail / Semi-Formal</span>
                   </div>
                 </td>
@@ -352,7 +378,7 @@
                   <div class="event-desc">
                     Stop by for coffee and food!
                   </div>
-                  <div style="margin-top: 8px;">
+                  <div style="margin-top: 10px;">
                     <span class="tag-attire">Attire: Casual</span>
                   </div>
                 </td>
@@ -365,7 +391,7 @@
 
           <!-- HIT COUNTER -->
           <div class="hit-counter-container">
-            <p style="margin: 0 0 6px 0; font-family: 'MS Sans Serif', sans-serif; font-size: 11px;">You are visitor number:</p>
+            <p style="margin: 0 0 6px 0; font-family: Tahoma, 'MS Sans Serif', sans-serif; font-size: 12px;">You are visitor number:</p>
             <img src="counter.gif" alt="000142" style="border: 2px inset #808080; image-rendering: pixelated;">
           </div>
 
