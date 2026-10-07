@@ -6,10 +6,10 @@
   <title>Schedule - Hannah Lang & Andy Dunn</title>
   <style>
     /* ---------------------------------------------------
-       GLOBAL & LAYOUT STYLES (From your index.html)
+       #6 ENLARGED RETRO CURSOR SETUP
     --------------------------------------------------- */
     html, body, a, button {
-      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0v16.043l4.113-3.882 3.195 7.126 3.167-1.42-3.14-7.013h5.452z" fill="white" stroke="black" stroke-width="2"/></svg>'), auto; 
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><path d="M0 0v16.043l4.113-3.882 3.195 7.126 3.167-1.42-3.14-7.013h5.452z" fill="white" stroke="black" stroke-width="2"/></svg>'), auto; 
     }
     
     body {
@@ -23,32 +23,9 @@
       padding: 0;
     }
 
-    .blink-container {
-      background-color: #0F172A; 
-      color: #F8FAFC; 
-      font-family: "Comic Sans MS", "Comic Sans", sans-serif; 
-      font-size: 16px; 
-      font-weight: bold; 
-      letter-spacing: 2px; 
-      padding: 8px 0; 
-      text-align: center; 
-      border-bottom: 3px double #F8FAFC; 
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
-    }
-
-    .blink-text {
-      animation: retro-blink 2.5s ease-in-out infinite;
-    }
-    
-    @media (prefers-reduced-motion: reduce) {
-      .blink-text { animation: none; }
-    }
-
-    @keyframes retro-blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; } 
-    }
-    
+    /* ---------------------------------------------------
+       MAIN LAYOUT CONTAINER & SIDEBAR
+    --------------------------------------------------- */
     .main-container {
       background-color: #F8FAFC; 
       border: 3px solid; 
@@ -125,107 +102,118 @@
     }
 
     /* ---------------------------------------------------
-       OPTION 1: WINDOWS 95 CLASSIC DESKTOP STYLES
+       #1 RAINBOW BAR SEPARATOR
     --------------------------------------------------- */
-    .win95-schedule-window {
-      background-color: #C0C0C0; /* Classic Windows Gray */
-      color: #000000;
-      border: 3px outset #FFFFFF;
-      padding: 15px;
-      font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    .rainbow-bar {
+      height: 4px;
+      background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet);
+      border: 1px inset #808080;
+      margin: 15px 0;
     }
 
-    /* Windows Title Banner Header */
-    .win95-title-bar {
-      background-color: #000080; /* Windows Navy Blue */
-      color: #FFFFFF;
-      font-family: "Comic Sans MS", sans-serif;
-      font-size: 18px;
+    /* ---------------------------------------------------
+       SCHEDULE CONTENT AREA
+    --------------------------------------------------- */
+    .schedule-title {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 26px;
       font-weight: bold;
-      padding: 6px 12px;
-      margin-bottom: 15px;
-      border: 2px inset #808080;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      color: #000080; /* Windows Navy */
+      text-align: center;
+      margin: 10px 0 15px 0;
     }
 
-    .win95-marquee {
-      color: #800000; /* Deep Maroon Accent */
-      font-family: Courier, monospace;
-      font-size: 14px;
-      font-weight: bold;
-      background-color: #FFFFFF;
-      border: 2px inset #808080;
-      padding: 4px;
-      margin-bottom: 20px;
-    }
-
-    .win95-schedule-table {
+    /* #2 TABLE LAYOUT WITH WINDOWS 95 3D BEVEL & BEVEL CELL CONTAINERS */
+    .retro-schedule-table {
       width: 100%;
       border-collapse: separate;
-      border-spacing: 4px;
+      border-spacing: 6px;
       border: 3px outset #FFFFFF;
-      background-color: #D4D0C8;
+      background-color: #C0C0C0; /* Classic Desktop Gray */
+      padding: 4px;
     }
 
-    .win95-schedule-table td {
+    .retro-schedule-table td {
       border: 2px inset #808080;
-      padding: 10px;
+      padding: 10px 12px;
       vertical-align: top;
-      background-color: #FFFFFF;
     }
 
-    .win95-time-cell {
-      width: 35%;
-      background-color: #E0E0E0 !important;
+    /* #3 ASYMMETRICAL CELL TINTING (Gray Left Column vs Pure White Right) */
+    .time-cell {
+      width: 32%;
+      background-color: #E0E0E0 !important; /* Recessed Gray Accent */
     }
 
+    .info-cell {
+      background-color: #FFFFFF !important; /* Pure White Reading Panel */
+    }
+
+    /* #4 DOTTED DIVIDER BETWEEN MULTI-EVENT DAYS (Friday Events) */
+    .multi-event-divider td {
+      border-bottom: 2px dashed #999999 !important;
+    }
+
+    /* #2 MICRO-TYPOGRAPHY & UPPERCASE BADGES */
     .time-badge {
-      background-color: #008080; /* Teal Badge */
+      background-color: #008080; /* Windows Teal */
       color: #FFFFFF;
-      font-family: Courier, monospace;
+      font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
       font-weight: bold;
-      font-size: 12px;
-      padding: 2px 6px;
-      border: 1px solid #004040;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 3px 6px;
+      border: 1px outset #FFFFFF;
       display: inline-block;
-      margin-bottom: 5px;
+      margin-bottom: 6px;
+    }
+
+    .time-range {
+      font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
+      font-size: 11px;
+      font-weight: bold;
+      color: #000000;
+      letter-spacing: 0.5px;
     }
 
     .event-title {
-      color: #800000; /* Maroon Title */
-      font-family: "Comic Sans MS", sans-serif;
-      font-size: 16px;
+      color: #800000; /* Windows Maroon */
+      font-family: "Times New Roman", Times, serif;
+      font-size: 18px;
       font-weight: bold;
       margin-bottom: 4px;
     }
 
     .event-location {
-      color: #000080; /* Navy Blue Location */
+      color: #000080; /* Windows Navy Blue */
+      font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
+      font-size: 12px;
       font-weight: bold;
-      font-size: 13px;
       margin-bottom: 6px;
     }
 
     .event-desc {
       color: #000000;
-      font-size: 13px;
+      font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
+      font-size: 12px;
       line-height: 1.4;
     }
 
     .tag-attire {
-      background-color: #E2E8F0;
+      background-color: #F1F5F9;
       color: #000080;
-      border: 1px solid #000080;
+      border: 1px solid #808080;
       padding: 2px 6px;
-      font-size: 11px;
-      font-family: Arial, sans-serif;
+      font-size: 10px;
+      font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
       font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: inline-block;
     }
 
-    .hit-counter {
+    .hit-counter-container {
       text-align: center;
       margin-top: 20px;
       font-family: Courier, monospace;
@@ -254,8 +242,8 @@
       .content-panel {
         padding-left: 0 !important;
       }
-      .win95-time-cell {
-        width: 100%;
+      .time-cell {
+        width: 100% !important;
       }
       html, body, a, button {
         cursor: auto !important; 
@@ -265,15 +253,11 @@
 </head>
 <body>
 
-  <div class="blink-container">
-    <span class="blink-text">*** WE'RE GETTING MARRIED!!! ***</span>
-  </div>
-
   <div class="main-container">
     
     <table class="master-layout-table" border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <!-- LEFT SIDEBAR NAVIGATION -->
+        <!-- LEFT SIDEBAR NAVIGATION MENU (CONSISTENT ACROSS SITE) -->
         <td class="sidebar-panel">
           <div class="sidebar-heading">NAVIGATION MENU</div>
           <ul class="sidebar-nav-list">
@@ -298,93 +282,91 @@
         <!-- RIGHT MAIN CONTENT PANEL -->
         <td class="content-panel">
           
-          <!-- WINDOWS 95 CLASSIC DESKTOP WINDOW -->
-          <div class="win95-schedule-window">
-            
-            <div class="win95-title-bar">
-              <span>Event_Schedule.exe</span>
-              <span style="font-family: Arial, sans-serif; font-size: 12px; border: 1px outset #fff; padding: 0 4px; background: #C0C0C0; color: #000;">X</span>
-            </div>
-            
-            <marquee class="win95-marquee" scrollamount="5">
-              &gt;&gt;&gt; DON'T BE LATE! CEREMONY STARTS PROMPTLY AT 5:00 PM &lt;&lt;&lt; 
-            </marquee>
+          <div class="schedule-title">
+            <u>The Schedule of Events</u>
+          </div>
 
-            <table class="win95-schedule-table">
-              <tbody>
-                <!-- Event 1 -->
-                <tr>
-                  <td class="win95-time-cell">
-                    <span class="time-badge">THURSDAY 09/23</span><br>
-                    <strong style="font-size: 12px; color: #000000;">7:00 PM - 10:00 PM</strong>
-                  </td>
-                  <td>
-                    <div class="event-title">Welcome Drinks</div>
-                    <div class="event-location">Location: Crossbar Der Biergarten</div>
-                    <div class="event-desc">
-                      Kick off the weekend with us!
-                    </div>
-                    <div style="margin-top: 8px;">
-                      <span class="tag-attire">Attire: Casual</span>
-                    </div>
-                  </td>
-                </tr>
+          <!-- TOP RAINBOW BAR -->
+          <div class="rainbow-bar"></div>
 
-                <!-- Event 2 -->
-                <tr>
-                  <td class="win95-time-cell">
-                    <span class="time-badge">FRIDAY 09/24</span><br>
-                    <strong style="font-size: 12px; color: #000000;">4:30 PM - 10:00 PM</strong>
-                  </td>
-                  <td>
-                    <div class="event-title">The Wedding Ceremony & Reception</div>
-                    <div class="event-location">Location: American Visionary Art Museum</div>
-                    <div class="event-desc">
-                      Ceremony starts promptly at 5:00 PM, so please plan to arrive 15-30 minutes early to find a seat. Cocktail hour, dinner, and dancing to follow!
-                    </div>
-                    <div style="margin-top: 8px;">
-                      <span class="tag-attire">Attire: Cocktail / Semi-Formal</span>
-                    </div>
-                  </td>
-                </tr>
+          <!-- EVENT SCHEDULE TABLE (WIN 95 PALETTE & TINTED CELLS) -->
+          <table class="retro-schedule-table">
+            <tbody>
+              <!-- Event 1: Thursday -->
+              <tr>
+                <td class="time-cell">
+                  <span class="time-badge">THURSDAY 09/23</span><br>
+                  <span class="time-range">7:00 PM - 10:00 PM</span>
+                </td>
+                <td class="info-cell">
+                  <div class="event-title">Welcome Drinks</div>
+                  <div class="event-location">Location: Crossbar Der Biergarten</div>
+                  <div class="event-desc">
+                    Kick off the weekend with us!
+                  </div>
+                  <div style="margin-top: 8px;">
+                    <span class="tag-attire">Attire: Casual</span>
+                  </div>
+                </td>
+              </tr>
 
-                <!-- Event 3 -->
-                <tr>
-                  <td class="win95-time-cell">
-                    <span class="time-badge">FRIDAY 09/24</span><br>
-                    <strong style="font-size: 12px; color: #000000;">10:00 PM</strong>
-                  </td>
-                  <td>
-                    <div class="event-title">After Party</div>
-                    <div class="event-location">Location: TBD in Federal Hill</div>
-                  </td>
-                </tr>
+              <!-- Event 2: Friday Ceremony (Part 1 of Multi-Event Day) -->
+              <tr class="multi-event-divider">
+                <td class="time-cell">
+                  <span class="time-badge">FRIDAY 09/24</span><br>
+                  <span class="time-range">4:30 PM - 10:00 PM</span>
+                </td>
+                <td class="info-cell">
+                  <div class="event-title">The Wedding Ceremony & Reception</div>
+                  <div class="event-location">Location: American Visionary Art Museum</div>
+                  <div class="event-desc">
+                    Ceremony starts promptly at 5:00 PM, so please plan to arrive 15-30 minutes early to find a seat. Cocktail hour, dinner, and dancing to follow!
+                  </div>
+                  <div style="margin-top: 8px;">
+                    <span class="tag-attire">Attire: Cocktail / Semi-Formal</span>
+                  </div>
+                </td>
+              </tr>
 
-                <!-- Event 4 -->
-                <tr>
-                  <td class="win95-time-cell">
-                    <span class="time-badge">SATURDAY 09/25</span><br>
-                    <strong style="font-size: 12px; color: #000000;">10:00 AM - 12:30 PM</strong>
-                  </td>
-                  <td>
-                    <div class="event-title">Farewell Brunch</div>
-                    <div class="event-location">Location: Little Havana</div>
-                    <div class="event-desc">
-                      Stop by for coffee and food!
-                    </div>
-                    <div style="margin-top: 8px;">
-                      <span class="tag-attire">Attire: Casual</span>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+              <!-- Event 3: Friday After Party (Part 2 of Multi-Event Day) -->
+              <tr>
+                <td class="time-cell">
+                  <span class="time-badge">FRIDAY 09/24</span><br>
+                  <span class="time-range">10:00 PM</span>
+                </td>
+                <td class="info-cell">
+                  <div class="event-title">After Party</div>
+                  <div class="event-location">Location: TBD in Federal Hill</div>
+                </td>
+              </tr>
 
-            <div class="hit-counter">
-              <p style="margin-bottom: 4px;">You are visitor number:</p>
-              <img src="counter.gif" alt="000142" style="border: 2px inset #808080; image-rendering: pixelated;">
-            </div>
+              <!-- Event 4: Saturday Brunch -->
+              <tr>
+                <td class="time-cell">
+                  <span class="time-badge">SATURDAY 09/25</span><br>
+                  <span class="time-range">10:00 AM - 12:30 PM</span>
+                </td>
+                <td class="info-cell">
+                  <div class="event-title">Farewell Brunch</div>
+                  <div class="event-location">Location: Little Havana</div>
+                  <div class="event-desc">
+                    Stop by for coffee and food!
+                  </div>
+                  <div style="margin-top: 8px;">
+                    <span class="tag-attire">Attire: Casual</span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
+          <!-- BOTTOM RAINBOW BAR -->
+          <div class="rainbow-bar"></div>
+
+          <!-- HIT COUNTER -->
+          <div class="hit-counter-container">
+            <p style="margin: 0 0 6px 0; font-family: 'MS Sans Serif', sans-serif; font-size: 11px;">You are visitor number:</p>
+            <img src="counter.gif" alt="000142" style="border: 2px inset #808080; image-rendering: pixelated;">
           </div>
 
         </td>
