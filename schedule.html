@@ -69,9 +69,8 @@
       width: 180px; 
       background-color: #E2E8F0; 
       border: 2px inset #fff; 
-      padding: 15px 10px 80px 10px; 
+      padding: 15px 10px 30px 10px; 
       vertical-align: top;
-      position: relative; 
     }
 
     .sidebar-heading {
@@ -120,123 +119,118 @@
       image-rendering: pixelated; 
     }
 
-    .secret-door-link {
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-      display: inline-block;
-      text-decoration: none;
-    }
-
-    .secret-door-gif {
-      width: 45px; 
-      height: auto;
-      display: block;
-      image-rendering: pixelated;
-    }
-
     .content-panel {
       padding-left: 20px;
       vertical-align: top;
     }
 
     /* ---------------------------------------------------
-       RETRO SCHEDULE STYLES (Dark Mode / Neon / Geocities)
+       OPTION 1: WINDOWS 95 CLASSIC DESKTOP STYLES
     --------------------------------------------------- */
-    .retro-schedule-window {
-      background-color: #000000;
-      background-image: url('stars_bg.gif'); /* A classic tiling stars background */
+    .win95-schedule-window {
+      background-color: #C0C0C0; /* Classic Windows Gray */
+      color: #000000;
+      border: 3px outset #FFFFFF;
+      padding: 15px;
+      font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+
+    /* Windows Title Banner Header */
+    .win95-title-bar {
+      background-color: #000080; /* Windows Navy Blue */
       color: #FFFFFF;
-      border: 4px inset #808080;
-      padding: 20px;
-      font-family: "Times New Roman", Times, serif;
-    }
-
-    .retro-schedule-window h1 {
-      text-align: center;
-      color: #FFFF00; /* Neon Yellow */
       font-family: "Comic Sans MS", sans-serif;
-      text-decoration: underline;
-      letter-spacing: 2px;
-      text-shadow: 2px 2px #FF0000;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 6px 12px;
+      margin-bottom: 15px;
+      border: 2px inset #808080;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .retro-marquee {
-      color: #00FF00; /* Neon Green */
+    .win95-marquee {
+      color: #800000; /* Deep Maroon Accent */
       font-family: Courier, monospace;
-      font-size: 16px;
+      font-size: 14px;
       font-weight: bold;
-      background-color: #111;
-      border: 2px solid #00FF00;
+      background-color: #FFFFFF;
+      border: 2px inset #808080;
       padding: 4px;
       margin-bottom: 20px;
     }
 
-    .retro-schedule-table {
+    .win95-schedule-table {
       width: 100%;
       border-collapse: separate;
       border-spacing: 4px;
-      border: 5px outset #808080;
-      background-color: #1a1a1a;
+      border: 3px outset #FFFFFF;
+      background-color: #D4D0C8;
     }
 
-    .retro-schedule-table td {
-      border: 3px inset #808080;
-      padding: 12px;
+    .win95-schedule-table td {
+      border: 2px inset #808080;
+      padding: 10px;
       vertical-align: top;
+      background-color: #FFFFFF;
     }
 
-    .retro-time-cell {
+    .win95-time-cell {
       width: 35%;
-      background-color: #222;
+      background-color: #E0E0E0 !important;
     }
 
     .time-badge {
-      background-color: #FF00FF; /* Neon Magenta */
+      background-color: #008080; /* Teal Badge */
       color: #FFFFFF;
       font-family: Courier, monospace;
       font-weight: bold;
+      font-size: 12px;
       padding: 2px 6px;
-      border: 1px solid #FFF;
+      border: 1px solid #004040;
       display: inline-block;
       margin-bottom: 5px;
     }
 
     .event-title {
-      color: #FFFF00;
+      color: #800000; /* Maroon Title */
       font-family: "Comic Sans MS", sans-serif;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: bold;
       margin-bottom: 4px;
     }
 
     .event-location {
-      color: #00FFFF; /* Cyan */
+      color: #000080; /* Navy Blue Location */
       font-weight: bold;
-      font-size: 14px;
-      margin-bottom: 8px;
+      font-size: 13px;
+      margin-bottom: 6px;
     }
 
     .event-desc {
-      color: #F8FAFC;
-      font-size: 14px;
+      color: #000000;
+      font-size: 13px;
       line-height: 1.4;
     }
 
     .tag-attire {
-      background-color: #0000FF; /* Pure Blue */
-      color: #FFFFFF;
-      border: 1px dashed #00FFFF;
+      background-color: #E2E8F0;
+      color: #000080;
+      border: 1px solid #000080;
       padding: 2px 6px;
-      font-size: 12px;
+      font-size: 11px;
       font-family: Arial, sans-serif;
+      font-weight: bold;
     }
 
     .hit-counter {
       text-align: center;
       margin-top: 20px;
       font-family: Courier, monospace;
-      color: #00FF00;
+      font-size: 12px;
+      color: #000000;
     }
 
     /* Mobile overrides */
@@ -257,13 +251,10 @@
         display: inline-block !important;
         margin: 5px 10px !important;
       }
-      .secret-door-link {
-        display: none !important;
-      }
       .content-panel {
         padding-left: 0 !important;
       }
-      .retro-time-cell {
+      .win95-time-cell {
         width: 100%;
       }
       html, body, a, button {
@@ -302,31 +293,30 @@
               <img src="heart_bullet.gif" alt="*" class="retro-bullet"> <a href="faq.html" class="sidebar-link">FAQ</a>
             </li>
           </ul>
-
-          <a href="pinball.html" class="secret-door-link" title="???">
-            <img src="door.gif" alt="Secret Door" class="secret-door-gif">
-          </a>
         </td>
 
         <!-- RIGHT MAIN CONTENT PANEL -->
         <td class="content-panel">
           
-          <!-- GEOCITIES SCHEDULE WINDOW -->
-          <div class="retro-schedule-window">
+          <!-- WINDOWS 95 CLASSIC DESKTOP WINDOW -->
+          <div class="win95-schedule-window">
             
-            <h1>Event Schedule</h1>
+            <div class="win95-title-bar">
+              <span>Event_Schedule.exe</span>
+              <span style="font-family: Arial, sans-serif; font-size: 12px; border: 1px outset #fff; padding: 0 4px; background: #C0C0C0; color: #000;">X</span>
+            </div>
             
-            <marquee class="retro-marquee" scrollamount="5">
+            <marquee class="win95-marquee" scrollamount="5">
               &gt;&gt;&gt; DON'T BE LATE! CEREMONY STARTS PROMPTLY AT 5:00 PM &lt;&lt;&lt; 
             </marquee>
 
-            <table class="retro-schedule-table">
+            <table class="win95-schedule-table">
               <tbody>
                 <!-- Event 1 -->
                 <tr>
-                  <td class="retro-time-cell">
+                  <td class="win95-time-cell">
                     <span class="time-badge">THURSDAY 09/23</span><br>
-                    <strong style="font-size: 13px; color: #00FF00;">7:00 PM - 10:00 PM</strong>
+                    <strong style="font-size: 12px; color: #000000;">7:00 PM - 10:00 PM</strong>
                   </td>
                   <td>
                     <div class="event-title">Welcome Drinks</div>
@@ -334,7 +324,7 @@
                     <div class="event-desc">
                       Kick off the weekend with us!
                     </div>
-                    <div style="margin-top: 10px;">
+                    <div style="margin-top: 8px;">
                       <span class="tag-attire">Attire: Casual</span>
                     </div>
                   </td>
@@ -342,9 +332,9 @@
 
                 <!-- Event 2 -->
                 <tr>
-                  <td class="retro-time-cell">
+                  <td class="win95-time-cell">
                     <span class="time-badge">FRIDAY 09/24</span><br>
-                    <strong style="font-size: 13px; color: #00FF00;">4:30 PM - 10:00 PM</strong>
+                    <strong style="font-size: 12px; color: #000000;">4:30 PM - 10:00 PM</strong>
                   </td>
                   <td>
                     <div class="event-title">The Wedding Ceremony & Reception</div>
@@ -352,7 +342,7 @@
                     <div class="event-desc">
                       Ceremony starts promptly at 5:00 PM, so please plan to arrive 15-30 minutes early to find a seat. Cocktail hour, dinner, and dancing to follow!
                     </div>
-                    <div style="margin-top: 10px;">
+                    <div style="margin-top: 8px;">
                       <span class="tag-attire">Attire: Cocktail / Semi-Formal</span>
                     </div>
                   </td>
@@ -360,9 +350,9 @@
 
                 <!-- Event 3 -->
                 <tr>
-                  <td class="retro-time-cell">
+                  <td class="win95-time-cell">
                     <span class="time-badge">FRIDAY 09/24</span><br>
-                    <strong style="font-size: 13px; color: #00FF00;">10:00 PM</strong>
+                    <strong style="font-size: 12px; color: #000000;">10:00 PM</strong>
                   </td>
                   <td>
                     <div class="event-title">After Party</div>
@@ -372,9 +362,9 @@
 
                 <!-- Event 4 -->
                 <tr>
-                  <td class="retro-time-cell">
+                  <td class="win95-time-cell">
                     <span class="time-badge">SATURDAY 09/25</span><br>
-                    <strong style="font-size: 13px; color: #00FF00;">10:00 AM - 12:30 PM</strong>
+                    <strong style="font-size: 12px; color: #000000;">10:00 AM - 12:30 PM</strong>
                   </td>
                   <td>
                     <div class="event-title">Farewell Brunch</div>
@@ -382,7 +372,7 @@
                     <div class="event-desc">
                       Stop by for coffee and food!
                     </div>
-                    <div style="margin-top: 10px;">
+                    <div style="margin-top: 8px;">
                       <span class="tag-attire">Attire: Casual</span>
                     </div>
                   </td>
@@ -391,8 +381,8 @@
             </table>
 
             <div class="hit-counter">
-              <p>You are visitor number:</p>
-              <img src="counter.gif" alt="000142" style="border: 2px inset #fff; image-rendering: pixelated;">
+              <p style="margin-bottom: 4px;">You are visitor number:</p>
+              <img src="counter.gif" alt="000142" style="border: 2px inset #808080; image-rendering: pixelated;">
             </div>
 
           </div>
