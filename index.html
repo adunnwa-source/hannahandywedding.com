@@ -211,6 +211,41 @@
       color: #BE123C; /* Palette 1: Deep Rose Accent */ 
     }
 
+    /* Slate-inspired 90s action button for RSVP */
+    .rsvp-button-link {
+      display: inline-block;
+      margin-top: 14px;
+      background: #C3C7B5;
+      border: 2px solid #000;
+      border-right-color: #404040;
+      border-bottom-color: #404040;
+      border-left-color: #fff;
+      border-top-color: #fff;
+      padding: 6px 16px;
+      color: #000 !important;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 14px;
+      font-weight: normal;
+      text-decoration: none;
+      box-shadow: 1px 1px 0px #000;
+    }
+
+    .rsvp-button-link:hover {
+      background: #D4D8C8;
+    }
+
+    .rsvp-button-link:active {
+      border-left-color: #404040;
+      border-top-color: #404040;
+      border-right-color: #fff;
+      border-bottom-color: #fff;
+      padding: 7px 15px 5px 17px;
+    }
+
+    .rsvp-button-link u {
+      text-decoration: underline;
+    }
+
     /* Vintage Compressed Digital Photo Placeholder */
     .photo-frame {
       width: 320px;
@@ -364,6 +399,9 @@
               <p style="margin: 6px 0 0 0; font-size: 13px; color: #475569; font-style: italic;">
                 Baltimore, Maryland
               </p>
+              <div>
+                <a href="rsvp.html" class="rsvp-button-link">RSVP by <u>A</u>ug. 1, 2027</a>
+              </div>
             </div>
 
           </div>
