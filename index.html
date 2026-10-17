@@ -5,9 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hannah Lang & Andy Dunn - Wedding Website</title>
   <style>
-    /* Custom Retro Cursor Setup with Standard Fallback */
-    html, body, a, button {
-      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0v16.043l4.113-3.882 3.195 7.126 3.167-1.42-3.14-7.013h5.452z" fill="white" stroke="black" stroke-width="2"/></svg>'), auto; 
+    /* Custom Retro Cursor Setup: Default cursor for the page, hand cursor for links & buttons only */
+    html, body {
+      cursor: auto;
+    }
+    
+    a, button, input[type="submit"], [role="button"], .rsvp-button-link, .secret-door-link {
+      cursor: url('click-cursor.jpg'), pointer;
     }
     
     body {
