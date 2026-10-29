@@ -389,15 +389,37 @@
           <!-- BOTTOM RAINBOW BAR -->
           <div class="rainbow-bar"></div>
 
-          <!-- HIT COUNTER -->
+<!-- HIT COUNTER -->
           <div class="hit-counter-container">
             <p style="margin: 0 0 6px 0; font-family: Tahoma, 'MS Sans Serif', sans-serif; font-size: 12px;">You are visitor number:</p>
-            <img 
-              src="https://www.hitwebcounter.com/counter/counter.php?page=21526285&style=0025&nbdigits=5&type=page" 
-              alt="Visitor Counter" 
-              style="border: 2px inset #808080; image-rendering: pixelated;" 
-            />
+            <div id="visit-counter" class="retro-counter-display">000000</div>
           </div>
+
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- SCRIPT TO RUN THE WORKING COUNTER -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      let count = localStorage.getItem("wedding_schedule_visits");
+      
+      // If it's the first time anyone views it, start at 142 (or 1)
+      if (!count) {
+        count = 142;
+      } else {
+        count = parseInt(count) + 1;
+      }
+      
+      localStorage.setItem("wedding_schedule_visits", count);
+      
+      // Format with 6 leading zeros (e.g. 000143)
+      let formattedCount = String(count).padStart(6, '0');
+      document.getElementById("visit-counter").textContent = formattedCount;
+    });
+  </script>
+  
         </td>
       </tr>
     </table>
